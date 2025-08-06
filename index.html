@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Menu Hamburguer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Mobile</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navBar">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-
-            <div class="navList">
-                <ul>
-                    <li class="navItem"><a href="#home" class="navLink">Home</a></li>
-                    <li class="navItem"><a href="#sobre" class="navLink">Sobre</a></li>
-                    <li class="navItem"><a href="#experiencia" class="navLink">Experiencia</a></li>
-                    <li class="navItem"><a href="#contatos" class="navLink">Contatos</a></li>
-                </ul>
-            </div>
-
-            <div class="botaoMenu">
-                <button><a href="#">Menu</a></button>
-            </div>
-
-            <div class="menuResponsivo">
-                <button onclick="menuOpen()">
-                 <img class="icon" src="img/menu.svg" alt="Menu">
-                </button>
-            </div>
-            
-            <!------------------Menu responsivo----------------->
-
-            <div class="menuMobile">
-                <ul>
-                    <li class="navItem"><a href="#home" class="navLink">Home</a></li>
-                    <li class="navItem"><a href="#sobre" class="navLink">Sobre</a></li>
-                    <li class="navItem"><a href="#experiencia" class="navLink">Experiencia</a></li>
-                    <li class="navItem"><a href="#contatos" class="navLink">Contatos</a></li>
-                </ul>
-                    
-                    <div class="botaoMenu">
-                        <button><a href="#">Menu</a></button>
-                    </div>
-
-            </div>
-
+    <header id="header">
+      <a id="logo" href="">Logo</a>
+        <nav id="nav">
+         <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+          <span id="hamburger"></span>
+         </button>
+            <ul id="menu" role="menu">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#experiencia">Experiência</a></li>
+              <li><a href="#contatos">Contatos</a></li>
+            </ul>
         </nav>
     </header>
-
-    <script src="assets/js/script.js"></script>
+  <script src="./script.js"></script>
 </body>
+
 </html>

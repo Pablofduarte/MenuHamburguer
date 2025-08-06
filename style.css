@@ -1,124 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto' , sans-serif;
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto" , sans-serif;
 }
 
-header {
-    background-color: #24252a;
-    
+a {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
 }
 
-.navBar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 6rem;
-    align-items: center;
-    
+a:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
-
-.navList ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-
+#logo {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.logo h1 {
-    color: white;
-    font-size: 1.8rem;
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #02090d;
 }
 
-.navLink {
-    color: white;
-    text-decoration: none;
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
 }
 
-.botaoMenu button {
-    border: none;
-    background-color: #0187a7;
-    padding: 10px;
-    border-radius: 8px;
+#menu a {
+  display: block;
+  padding: 0.8rem;
 }
 
-.botaoMenu button a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
+#btn-mobile {
+  display: none;
+  color: white;
 }
 
-.menuResponsivo button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    
-}
-
-
-.menuResponsivo {
-    display: none;
-}
-
-.menuMobile {
-    display: none;
-}
-
-/* RESPOSIVIDADE MENU */
-
-@media screen and (max-width: 730px) {
-    .navBar {
-        padding: 1.5rem 4rem;
-    }
-
-    .navItem {
-        display: none;
-    }
-
-    .botaoMenu {
-        display: none; 
-    }
-
-    .menuResponsivo {
-        display: block; /* para que o botão resposivo apareça */ 
-    }
-
-    .menuMobile ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1.5rem;
-    }
-
-    .menuMobile .navItem {
-        display: block;
-        padding-top: 1.2rem;
-    }
-
-    .menuMobile .botaoMenu {
-        display: block;
-        padding-top:  1.2rem;
-
-    }
-
-    .menuMobile .botaoMenu button {
-        width: 100%;
-    }
-
-    .menuMobile.open {
-    display: flex;
-    flex-direction: column;
-    background-color: #24252a;
+@media (max-width: 600px) {
+  #menu {
+    display: block;
     position: absolute;
-    top: 70px;
-    left: 0;
     width: 100%;
-    z-index: 999;
+    top: 70px;
+    right: 0px;
+    background: #072536;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
     padding: 1rem 0;
-    text-align: center;
-}
-
-    
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.116);
+  }
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.7rem;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
 }
