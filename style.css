@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto' , sans-serif;
+}
+
+header {
+    background-color: #24252a;
+    
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+    align-items: center;
+    
+}
+
+
+.navList ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+}
+
+.botaoMenu button {
+    border: none;
+    background-color: #0187a7;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.botaoMenu button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.menuResponsivo button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+
+
+.menuResponsivo {
+    display: none;
+}
+
+.menuMobile {
+    display: none;
+}
+
+/* RESPOSIVIDADE MENU */
+
+@media screen and (max-width: 730px) {
+    .navBar {
+        padding: 1.5rem 4rem;
+    }
+
+    .navItem {
+        display: none;
+    }
+
+    .botaoMenu {
+        display: none; 
+    }
+
+    .menuResponsivo {
+        display: block; /* para que o botão resposivo apareça */ 
+    }
+
+    .menuMobile ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1.5rem;
+    }
+
+    .menuMobile .navItem {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .menuMobile .botaoMenu {
+        display: block;
+        padding-top:  1.2rem;
+
+    }
+
+    .menuMobile .botaoMenu button {
+        width: 100%;
+    }
+
+    .menuMobile.open {
+    display: flex;
+    flex-direction: column;
+    background-color: #24252a;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+    
+}
